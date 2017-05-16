@@ -25,6 +25,9 @@
 
 ## Requirements
 
+1. Node
+1. NPM
+
 ## Development
 
 ### Installing Dependencies
