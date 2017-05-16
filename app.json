@@ -1,0 +1,8 @@
+{
+  "name": "u4u",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
