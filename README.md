@@ -1,12 +1,13 @@
 # UforU
 
-> Pithy project description
+> Browse colleges
 
 ## Team
 
-  - Arseniy Kotov
-  - Helen Tang
-  - Farrah Bousetta
+  - Alex Seiden
+  - Eric Pan
+  - Fufei Du
+  - Prateek Bhatt
 
 ## Table of Contents
 
