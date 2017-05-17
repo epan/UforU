@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory, DefaultRoute, IndexLink } from 'react-router';
 
 import ResultListEntry from './ResultListEntry.jsx';
 
@@ -17,12 +18,12 @@ class Results extends React.Component {
     // Submit it to server
     // Display results
     const userInfo = {
-      tuition: props.location.query.tuition,
-      average_gpa: props.location.query.average_gpa,
-      average_sat_score: props.location.query.average_sat_score,
-      majors: props.location.query.majors,
-      size: props.location.query.size,
-      sports_division: props.location.query.sports_division
+      tuition: this.props.location.query.tuition,
+      average_gpa: this.props.location.query.average_gpa,
+      average_sat_score: this.props.location.query.average_sat_score,
+      majors: this.props.location.query.majors,
+      size: this.props.location.query.size,
+      sports_division: this.props.location.query.sports_division
     };
 
     this.sendSurveyInfo(userInfo);

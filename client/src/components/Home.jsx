@@ -47,9 +47,6 @@ class Home extends React.Component {
         <div className="container-fluid">
           <Survey sendSurveyInfo = {this.sendSurveyInfo}/>
         </div>
-        <div className="container-fluid">
-          <Results colleges = {this.state.colleges}/>
-        </div>
         <Authors />
       </div>
     );
