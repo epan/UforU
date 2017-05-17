@@ -42,7 +42,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid-fullwidth">
+      <div className="container-fluid">
         <Banner />
         <div className="container-fluid">
           <Survey sendSurveyInfo = {this.sendSurveyInfo}/>
