@@ -10,7 +10,7 @@ import Banner from './Banner.jsx';
 import Authors from './Authors.jsx';
 import Footer from './Footer.jsx';
 
-class Layout extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
 
@@ -43,7 +43,6 @@ class Layout extends React.Component {
   render() {
     return (
       <div className="container-fluid-fullwidth">
-        <Header />
         <Banner />
         <div className="container-fluid">
           <Survey sendSurveyInfo = {this.sendSurveyInfo}/>
@@ -52,10 +51,9 @@ class Layout extends React.Component {
           <Results colleges = {this.state.colleges}/>
         </div>
         <Authors />
-        <Footer />
       </div>
     );
   }
 }
 
-export default Layout;
+export default Home;
