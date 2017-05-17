@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import axios from 'axios';
+
 import Survey from './Survey.jsx';
 import Results from './Results.jsx';
 import Header from './Header.jsx';
 import Banner from './Banner.jsx';
 import Authors from './Authors.jsx';
-import axios from 'axios';
+import Footer from './Footer.jsx';
 
 class Layout extends React.Component {
   constructor(props) {
@@ -50,9 +52,7 @@ class Layout extends React.Component {
           <Results colleges = {this.state.colleges}/>
         </div>
         <Authors />
-        <div className = "container-fluid-fullwidth">
-          <div className="navbar-default navbar-fixed-bottom">Made by Farrah Bousetta, Arseniy Kotov, and Helen Tang</div>
-        </div>
+        <Footer />
       </div>
     );
   }
