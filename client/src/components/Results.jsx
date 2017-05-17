@@ -1,8 +1,5 @@
 import React from 'react';
 import ResultListEntry from './ResultListEntry.jsx';
-import $ from 'jquery';
-import _ from 'lodash';
-
 
 class Results extends React.Component {
   constructor(props) {
