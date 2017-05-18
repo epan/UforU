@@ -23,5 +23,27 @@ module.exports = {
         }
       });
     }
+  },
+  comments: {
+    getAllByCollegeId: (id, cb) => {
+      const sqlQuery = `SELECT * FROM Comments WHERE university_id=${id}`;
+      connection.query(sqlQuery, (error, results, fields) => {
+        if (err) {
+          cb(err, null);
+        } else {
+          cb(null, results);
+        }
+      });
+    },
+    post: (user, comment, universityId, cb) => {
+      const sqlQuery = `INSERT INTO Comments (user, comment, university_id) VALUES ('${user}', '${comment}', ${universityId})`;
+      connection.query(sqlQuery, (error, results, fields) => {
+        if (err) {
+          cb(err, null);
+        } else {
+          cb(null, results);
+        }
+      });
+    }
   }
 };
