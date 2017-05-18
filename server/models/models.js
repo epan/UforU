@@ -45,5 +45,17 @@ module.exports = {
         }
       });
     }
+  },
+  college: {
+    get: function(id, cb) {
+      const sqlQuery = `SELECT name, description, website_url, image_url FROM universities WHERE id = ${id}`;
+      connection.query(sqlQuery, function(error, results, fields) {
+        if (err) {
+          cb(err, null);
+        } else {
+          cb(null, results);
+        }
+      });
+    }
   }
 };
