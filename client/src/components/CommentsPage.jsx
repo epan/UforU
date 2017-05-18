@@ -38,7 +38,7 @@ class CommentsPage extends React.Component {
     }).then((response) => {
       console.log('THIS IS THE COMMENTS RESPONSE', response);
       this.setState({
-        university: response.data
+        university: response.data[0]
       });
     }).catch((err) => {
       console.log(err);
