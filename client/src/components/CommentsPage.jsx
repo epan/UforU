@@ -14,8 +14,8 @@ class CommentsPage extends React.Component {
     };
   }
 
-  onComponentMount() {
-    getBanner(1);
+  componentDidMount() {
+    this.getBanner(1);
   }
 
   getComments(universityId) {
@@ -31,12 +31,12 @@ class CommentsPage extends React.Component {
   }
 
   getBanner(universityId) {
-    axios.get('api/college', {
+    axios.get('/api/college', {
       params: {
         universityId: universityId
       }
     }).then((response) => {
-      console.log(response);
+      console.log('THIS IS THE COMMENTS RESPONSE', response);
       this.setState({
         university: response.data
       });

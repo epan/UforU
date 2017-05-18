@@ -66,9 +66,9 @@ module.exports = {
   },
   college: {
     get: function(req, res) {
-      models.colleges.get(req.body.universityId, function(err, response) {
+      models.college.get(req.body.universityId, function(err, response) {
         if (err) {
-          res.status.send(500).send(err);
+          res.status(500).send(err);
         } else {
           res.status(200).send(response);
         }

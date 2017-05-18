@@ -9,6 +9,6 @@ router.get('/api/comments', controllers.comments.get);
 
 router.post('/api/comments', controllers.comments.post);
 
-router.get('api/college', controllers.college.get);
+router.get('/api/college', controllers.college.get);
 
 module.exports = router;
