@@ -6,7 +6,7 @@ const Header = () => {
           <a href={global.window.location.origin} className="navbar-brand">UforU</a>
         </div>
       </div>
-    </nav >
+    </nav>
   );
 };
 
