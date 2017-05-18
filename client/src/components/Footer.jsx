@@ -1,8 +1,10 @@
 const Footer = () => {
   return (
-    <div className = "container-fluid-fullwidth">
-      <div className="navbar-default navbar-fixed-bottom">Made by Farrah Bousetta, Arseniy Kotov, and Helen Tang</div>
-    </div>
+  <footer>
+      <div className="container-fluid navbar-inverse">
+        <h6 className="text-muted small">Made by Alex Seiden, Eric Pan, and Prateek Bhatt</h6>
+      </div>
+    </footer>
   );
 };
 
