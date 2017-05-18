@@ -9,7 +9,6 @@ import Header from './Header.jsx';
 import Banner from './Banner.jsx';
 import Authors from './Authors.jsx';
 import Footer from './Footer.jsx';
-import Comments from './CommentsPage.jsx';
 
 class Home extends React.Component {
   constructor(props) {
@@ -49,7 +48,6 @@ class Home extends React.Component {
           <Survey sendSurveyInfo = {this.sendSurveyInfo}/>
         </div>
         <Authors />
-        <Comments />
       </div>
     );
   }
