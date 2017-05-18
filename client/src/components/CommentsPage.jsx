@@ -9,13 +9,15 @@ class CommentsPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      university: {}
+    };
   }
 
   getComments(universityId) {
     axios.get('/api/comments', {
       params: {
-        universityID: universityId
+        universityId: universityId
       }
     }).then((response) => {
       // Some code to manage the response, now that I'm typing this I realize that I need to hold on this until I understand our socket stuff more.
@@ -24,10 +26,24 @@ class CommentsPage extends React.Component {
     });
   }
 
+  getBanner(universityId) {
+    axios.get('api/college', {
+      params: {
+        universityId: universityId
+      }
+    }).then((response) => {
+      this.setState({
+        university: response.data
+      });
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
   render () {
     return (
       <div>
-        <CommentsBanner />
+        <CommentsBanner college={this.state.university}/>
         <CommentsChat />
       </div>
     );
