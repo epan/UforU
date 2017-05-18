@@ -43,5 +43,25 @@ module.exports = {
         }
       });
     }
+  },
+  comments: {
+    get: function(req, res) {
+      models.comments.getAllByCollegeId(req.body.id, function(err, response) {
+        if (err) {
+          res.status(500).send(err);
+        } else {
+          res.status(200).send(response);
+        }
+      });
+    },
+    post: function(req, res) {
+      models.comments.post(req.body.user, req.body.comment. req.body.universityId, function(err, data) {
+        if (err) {
+          res.status(500).send(err);
+        } else {
+          res.status(200).send(response);
+        }
+      });
+    }
   }
 };

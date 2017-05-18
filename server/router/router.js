@@ -5,4 +5,8 @@ router.get('/api/colleges', controllers.colleges.get);
 
 router.post('/api/colleges/suggestions', controllers.colleges.getSuggestions);
 
+router.get('/api/comments', controllers.comments.get);
+
+router.post('/api/comments', controllers.comments.post);
+
 module.exports = router;
