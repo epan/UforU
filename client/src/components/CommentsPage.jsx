@@ -12,9 +12,24 @@ class CommentsPage extends React.Component {
     this.state = {};
   }
 
+  getComments(universityId) {
+    axios.get('/api/comments', {
+      params: {
+        universityID: universityId
+      }
+    }).then((response) => {
+      // Some code to manage the response, now that I'm typing this I realize that I need to hold on this until I understand our socket stuff more.
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
   render () {
     return (
-      <h1>This is the comments page</h1>
+      <div>
+        <CommentsBanner />
+        <CommentsChat />
+      </div>
     );
   }
 }
