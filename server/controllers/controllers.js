@@ -46,7 +46,7 @@ module.exports = {
   },
   comments: {
     get: function(req, res) {
-      models.comments.getAllByCollegeId(req.body.id, function(err, response) {
+      models.comments.getAllByCollegeId(req.query.universityId, function(err, response) {
         if (err) {
           res.status(500).send(err);
         } else {
@@ -66,7 +66,7 @@ module.exports = {
   },
   college: {
     get: function(req, res) {
-      models.college.get(req.body.universityId, function(err, response) {
+      models.college.get(req.query.universityId, function(err, response) {
         if (err) {
           res.status(500).send(err);
         } else {
