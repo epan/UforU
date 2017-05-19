@@ -36,7 +36,6 @@ class CommentsPage extends React.Component {
         universityId: universityId
       }
     }).then((response) => {
-      console.log('THIS IS THE COMMENTS RESPONSE', response);
       this.setState({
         university: response.data[0]
       });

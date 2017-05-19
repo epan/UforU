@@ -46,11 +46,11 @@ module.exports = {
   },
   comments: {
     get: function(req, res) {
-      models.comments.getAllByCollegeId(req.query.universityId, function(err, response) {
+      models.comments.getAllByCollegeId(req.query.universityId, function(err, data) {
         if (err) {
           res.status(500).send(err);
         } else {
-          res.status(200).send(response);
+          res.status(200).send(data);
         }
       });
     },
@@ -59,18 +59,18 @@ module.exports = {
         if (err) {
           res.status(500).send(err);
         } else {
-          res.status(200).send(response);
+          res.status(200).send(data);
         }
       });
     }
   },
   college: {
     get: function(req, res) {
-      models.college.get(req.query.universityId, function(err, response) {
+      models.college.get(req.query.universityId, function(err, data) {
         if (err) {
           res.status(500).send(err);
         } else {
-          res.status(200).send(response);
+          res.status(200).send(data);
         }
       });
     }
