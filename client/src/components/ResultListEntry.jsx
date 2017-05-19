@@ -1,4 +1,5 @@
 import React from 'react';
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory, DefaultRoute, IndexLink } from 'react-router';
 
 class ResultListEntry extends React.Component {
   constructor(props) {
@@ -13,8 +14,7 @@ class ResultListEntry extends React.Component {
           <div className="col-md-3">
             <img className="img-responsive cardImages style_prevu_kit" src={college.image_url} />
           </div>
-          {/* <Link > to /college/:id route {college.id} */}
-          <a className="college-name" href={'http://' + college.website_url}> {college.name}</a>
+          <Link className="college-name" to={`/college/${college.id}`}>{college.name}</Link>
           <p className="description">{college.description}</p>
         </div>
       </div>

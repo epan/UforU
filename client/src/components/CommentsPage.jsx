@@ -15,7 +15,7 @@ class CommentsPage extends React.Component {
   }
 
   componentDidMount() {
-    this.getBanner(1);
+    this.getBanner(this.props.params.id);
   }
 
   getComments(universityId) {
