@@ -26,7 +26,9 @@ module.exports = {
   },
   comments: {
     getAllByCollegeId: (id, cb) => {
+      console.log('id', id);
       const sqlQuery = `SELECT * FROM Comments WHERE university_id=${id}`;
+      console.log('sqlQuery', sqlQuery);
       connection.query(sqlQuery, (err, results, fields) => {
         if (err) {
           cb(err, null);

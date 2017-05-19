@@ -5,15 +5,11 @@ module.exports = {
     get: function(req, res) {
       models.colleges.get(function(err, data) {
         if (err) {
-          res
-            .status(500)
-            .send(err);
+          res.status(500).send(err);
         } else {
           data = JSON.stringify(data);
           data = JSON.parse(data);
-          res
-            .status(200)
-            .send(data);
+          res.status(200).send(data);
         }
       });
     },

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory, DefaultRoute, IndexLink } from 'react-router';
 
 import CommentsBanner from './CommentsBanner.jsx';
-import CommentsChat from './CommentsChat.jsx';
+import CommentsBody from './CommentsBody.jsx';
 
 class CommentsPage extends React.Component {
   constructor(props) {
@@ -16,18 +16,7 @@ class CommentsPage extends React.Component {
 
   componentDidMount() {
     this.getBanner(this.props.params.id);
-  }
 
-  getComments(universityId) {
-    axios.get('/api/comments', {
-      params: {
-        universityId: universityId
-      }
-    }).then((response) => {
-      // Some code to manage the response, now that I'm typing this I realize that I need to hold on this until I understand our socket stuff more.
-    }).catch((err) => {
-      console.log(err);
-    });
   }
 
   getBanner(universityId) {
@@ -47,8 +36,8 @@ class CommentsPage extends React.Component {
   render () {
     return (
       <div>
-        <CommentsBanner college={this.state.university}/>
-        <CommentsChat />
+        <CommentsBanner college={this.state.university} />
+        <CommentsBody collegeId={this.props.params.id}/>
       </div>
     );
   }
