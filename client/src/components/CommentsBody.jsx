@@ -36,8 +36,8 @@ class CommentsBody extends React.Component {
     return (
       <div>
         <p>This is the comments chat</p>
-        <CommentsList/>
-        <CommentInput/>
+        <CommentsList comments={this.state.comments} />
+        <CommentInput />
       </div>
     );
   }

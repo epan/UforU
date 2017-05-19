@@ -1,8 +1,10 @@
 import React from 'react';
 
-const CommentsEntry = (props) => {
+const CommentsEntry = ({ comment }) => {
   return (
-    <div></div>
+    <div>
+      <p>{comment.user}: {comment.comment}</p>
+    </div>
   );
 };
 

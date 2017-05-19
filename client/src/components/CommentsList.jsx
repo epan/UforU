@@ -1,8 +1,16 @@
 import React from 'react';
+import CommentsEntry from './CommentsEntry.jsx';
 
-const CommentsList = (props) => {
+const CommentsList = ({ comments }) => {
+  console.log('comments', comments);
   return (
-    <div></div>
+    <div>
+      {
+        comments.map(comment => {
+          return <CommentsEntry key={comment.id} comment={comment} />;
+        })
+      }
+    </div>
   );
 };
 
