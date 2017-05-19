@@ -14,6 +14,7 @@ class App extends React.Component {
         <Route path='/' component={Container}>
           <IndexRoute component={Home} />
           <Route path='results' component={Results} />
+          {/* Add route to /college/:id */}
         </Route>
       </Router>
     );
