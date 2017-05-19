@@ -110,10 +110,10 @@ class Survey extends React.Component {
 
   render() {
     return (
-    <form className="container" onSubmit={this.handleFormSubmit}>
-				<h5><u><b>UNIVERSITY PREFERENCES</b></u></h5>
-        <div className="container-fluid">
-          <div className="col-md-5">
+      <form className="container" onSubmit={this.handleFormSubmit}>
+        <h5><u><b>UNIVERSITY PREFERENCES</b></u></h5>
+        <div className="row">
+          <div className="col-md-6">
             <Select
               name={'maxTuition'}
               placeholder={'Max tuition per year'}
@@ -121,7 +121,7 @@ class Survey extends React.Component {
               options={this.state.maxTuitionOptions}
               selectedOption={this.state.tuition} />
           </div>
-          <div className="col-md-5">
+          <div className="col-md-6">
             <Select
               name={'sizeRange'}
               placeholder={'Preferred student body size'}
@@ -129,14 +129,8 @@ class Survey extends React.Component {
               options={this.state.sizeRangeOptions}
               selectedOption={this.state.size} />
           </div>
-          <div className="col-md-2">
-            <button
-              className="button"
-              className="btn btn-primary btn-lg pull-right"
-              onClick={this.handleClearForm}>Clear form</button>
-          </div>
         </div>
-        <div className="container-fluid">
+        <div className="row">
           <div className="col-md-6">
             <SingleInput
               inputType={'text'}
@@ -156,7 +150,7 @@ class Survey extends React.Component {
               placeholder={'Type your SAT Score here'} />
           </div>
         </div>
-        <div className="container-fluid">
+        <div className="row">
           <div className="col-md-12">
             <CheckboxOrRadioGroup
               title={'WHICH MAJORS ARE YOU INTERESTED IN?'}
@@ -167,7 +161,7 @@ class Survey extends React.Component {
               selectedOptions={this.state.majors} />
           </div>
         </div>
-        <div className="container-fluid">
+        <div className="row">
           <div className="col-md-12">
             <CheckboxOrRadioGroup
               title={'WHICH SPORTS DIVISION ARE YOU LOOKING FOR?'}
@@ -177,12 +171,16 @@ class Survey extends React.Component {
               options={this.state.sportsDivisionOptions}
               selectedOptions={this.state.sports_division} />
           </div>
-          <input
-            type="submit"
-            className="btn btn-primary float-right"
-            value="Submit"/>
         </div>
-    </form>
+        <div className="row">
+          <div className="col-xs-12">
+            <input
+              type="submit"
+              className="btn btn-primary"
+              value="Submit"/>  
+          </div>
+        </div>
+      </form>
     );
   }
 }
