@@ -9,9 +9,15 @@ import Results from './components/Results.jsx';
 import Survey from './components/Survey.jsx';
 import CommentsPage from './components/CommentsPage.jsx';
 
+// TODO: Make sure connect works for prod
 const socket = io.connect('http://127.0.0.1:3000');
 socket.on('connect', function(data) {
-  socket.emit('event', 'cash me outside');
+  console.log('before emit and on');
+  socket.emit('event', 'cash me ousside');
+  socket.on('ok', function(msg) {
+    console.log('sup2');
+    console.log(msg);
+  });
 });
 
 class App extends React.Component {
