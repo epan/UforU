@@ -12,9 +12,15 @@ class CommentsBody extends React.Component {
       comments: []
     };
 
-    const URL = process.env.URL
-      ? `${process.env.URL}:${process.env.PORT}`
-      : 'http://127.0.0.1:3000';
+    let URL = '';
+    
+    if (process.env.URL) {
+      URL = `${process.env.URL}:${process.env.PORT}`;
+    } else {
+      URL = 'http://127.0.0.1:3000';
+    }
+
+    console.log('io.connect URL is:', URL);
 
     this.client = io.connect(URL);
 
