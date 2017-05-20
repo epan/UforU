@@ -25,6 +25,7 @@ const io = require('socket.io')(server);
 io.on('connection', function(client) {
   client.on('event', function(data) {
     console.log('io connected with', data);
+    client.emit('ok', 'yolo');
   });
   client.on('disconnect', function() {
     console.log('io disconnected');
