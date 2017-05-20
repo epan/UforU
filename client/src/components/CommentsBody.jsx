@@ -33,7 +33,10 @@ class CommentsBody extends React.Component {
     });
 
     this.client.on('commentAdded', (comment) => {
-      console.log('COMMENT ADDED TO DB: ', comment);
+      this.state.comments.push(comment);
+      this.setState({
+        comments: this.state.comments
+      });
     });
   }
 

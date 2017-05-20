@@ -26,8 +26,8 @@ module.exports = {
   },
   comments: {
     getAllByCollegeId: (id, cb) => {
-      const sqlQuery = `SELECT * FROM Comments WHERE university_id=${id}`;
-      connection.query(sqlQuery, (err, results, fields) => {
+      const sqlQuery = 'SELECT * FROM Comments WHERE university_id=?';
+      connection.query(sqlQuery, [id], (err, results, fields) => {
         if (err) {
           cb(err, null);
         } else {
@@ -36,8 +36,8 @@ module.exports = {
       });
     },
     addComment: (user, comment, universityId, cb) => {
-      const sqlQuery = `INSERT INTO Comments (user, comment, university_id) VALUES ('${user}', '${comment}', ${universityId})`;
-      connection.query(sqlQuery, (err, results, fields) => {
+      const sqlQuery = 'INSERT INTO Comments (user, comment, university_id) VALUES (?, ?, ?)';
+      connection.query(sqlQuery, [user, comment, universityId], (err, results, fields) => {
         if (err) {
           cb(err, null);
         } else {
@@ -49,8 +49,8 @@ module.exports = {
   },
   college: {
     get: function(id, cb) {
-      const sqlQuery = `SELECT name, description, website_url, image_url FROM universities WHERE id = ${id}`;
-      connection.query(sqlQuery, function(err, results, fields) {
+      const sqlQuery = 'SELECT name, description, website_url, image_url FROM universities WHERE id = ?';
+      connection.query(sqlQuery, [id], function(err, results, fields) {
         if (err) {
           cb(err, null);
         } else {
