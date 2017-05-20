@@ -12,7 +12,6 @@ class CommentsBody extends React.Component {
       comments: []
     };
 
-
     let URL = '';
     
     if (process.env.URL) {
