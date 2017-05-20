@@ -47,7 +47,7 @@ module.exports = {
       });
     },
     post: function(req, res) {
-      models.comments.post(req.body.user, req.body.comment. req.body.universityId, function(err, data) {
+      models.comments.post(req.body.user, req.body.comment, req.body.universityId, function(err, data) {
         if (err) {
           res.status(500).send(err);
         } else {

@@ -2,7 +2,6 @@ import React from 'react';
 import CommentsEntry from './CommentsEntry.jsx';
 
 const CommentsList = ({ comments }) => {
-  console.log('comments', comments);
   return (
     <div>
       {
