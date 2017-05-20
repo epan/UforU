@@ -30,7 +30,6 @@ class Results extends React.Component {
   }
 
   sendSurveyInfo(userData) {
-    console.log('axios data:', userData);
     userData.size = userData.size.split('-');
     axios({
       url: '/api/colleges/suggestions',
@@ -41,10 +40,9 @@ class Results extends React.Component {
       this.setState({
         colleges: results.data
       });
-      console.log('axios results: ', results);
     })
     .catch ((error) => {
-      console.log(error);
+      console.error(error);
     });
   }
 

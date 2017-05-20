@@ -34,7 +34,6 @@ class Survey extends React.Component {
     fetch('./startingData.json')
 			.then(res => res.json())
 			.then(data => {
-  console.log(data);
   this.setState({
     maxTuitionOptions: data.maxTuitionOptions,
     tuition: data.tuition,
@@ -180,7 +179,7 @@ class Survey extends React.Component {
                 <input
                   type="submit"
                   className="btn btn-primary"
-                  value="Submit"/>  
+                  value="Submit"/>
               </div>
             </div>
         </form>

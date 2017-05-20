@@ -29,7 +29,7 @@ class CommentsPage extends React.Component {
         university: response.data[0]
       });
     }).catch((err) => {
-      console.log(err);
+      console.error(err);
     });
   }
 

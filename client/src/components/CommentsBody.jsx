@@ -12,19 +12,28 @@ class CommentsBody extends React.Component {
       comments: []
     };
 
+    this.client = io.connect('http://127.0.0.1:3000');
+
     this.postComment = this.postComment.bind(this);
   }
 
   componentDidMount() {
     this.getComments(this.props.collegeId);
 
-    const client = io.connect('http://127.0.0.1:3000');
-    client.on('connect', () => {
-      client.emit('room', this.props.collegeId);
+    this.client.on('connect', () => {
+      this.client.emit('room', this.props.collegeId);
     });
 
-    client.on('roomResponse', (response) => {
+    this.client.on('roomResponse', (response) => {
       console.log(response);
+    });
+
+    this.client.on('dbError', (err) => {
+      console.error(err);
+    });
+
+    this.client.on('commentAdded', (comment) => {
+      console.log('COMMENT ADDED TO DB: ', comment);
     });
   }
 
@@ -43,7 +52,7 @@ class CommentsBody extends React.Component {
   }
 
   postComment(comment) {
-    // TODO: Emit socket.io event with comment and send comment to server
+    this.client.emit('comment', comment);
   }
 
   render () {
