@@ -12,7 +12,11 @@ class CommentsBody extends React.Component {
       comments: []
     };
 
-    this.client = io.connect('http://127.0.0.1:3000');
+    const URL = process.env.URL
+      ? `${process.env.URL}:${process.env.PORT}`
+      : 'http://127.0.0.1:3000';
+
+    this.client = io.connect(URL);
 
     this.postComment = this.postComment.bind(this);
   }
