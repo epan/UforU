@@ -35,14 +35,14 @@ module.exports = {
         }
       });
     },
-    post: (user, comment, universityId, cb) => {
+    addComment: (user, comment, universityId, cb) => {
       const sqlQuery = `INSERT INTO Comments (user, comment, university_id) VALUES ('${user}', '${comment}', ${universityId})`;
       connection.query(sqlQuery, (err, results, fields) => {
-        console.log('results', results);
         if (err) {
           cb(err, null);
         } else {
-          cb(null, results);
+          const output = {id: results.insertId, user: user, comment: comment};
+          cb(null, output);
         }
       });
     }

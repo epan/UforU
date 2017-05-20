@@ -4,6 +4,7 @@ const express = require('express');
 const logger = require('morgan');
 const path = require('path');
 const router = require('./router/router');
+const socketController = require('./controllers/socketControllers');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,15 +20,18 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(router);
 
 // attach socket.io to server and port
-const io = require('socket.io')(server);
+var io = require('socket.io')(server);
 
 // listeners for socket.io events
 io.on('connection', function(client) {
-  client.on('event', function(data) {
-    console.log('io connected with', data);
-    client.emit('ok', 'yolo');
-  });
-  client.on('disconnect', function() {
-    console.log('io disconnected');
+  client.on('room', function(room) {
+    client.join(room);
+    io.to(room).emit('roomResponse', 'You are in room: ' + room);
+
+    client.on('comment', function(post) {
+      socketController.comments.addComment(post, room, client);
+    });
   });
 });
+
+module.exports.io = io;

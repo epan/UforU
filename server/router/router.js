@@ -7,8 +7,6 @@ router.post('/api/colleges/suggestions', controllers.colleges.getSuggestions);
 
 router.get('/api/comments', controllers.comments.get);
 
-router.post('/api/comments', controllers.comments.post);
-
 router.get('/api/college', controllers.college.get);
 
 module.exports = router;
