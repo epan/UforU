@@ -23,11 +23,15 @@ const io = require('socket.io')(server);
 
 // listeners for socket.io events
 io.on('connection', function(client) {
-  client.on('event', function(data) {
-    console.log('io connected with', data);
-    client.emit('ok', 'yolo');
+  client.on('room', function(room) {
+    client.join(room);
+    io.to(room).emit('roomResponse', 'You are in room: ' + room);
   });
-  client.on('disconnect', function() {
-    console.log('io disconnected');
-  });
+  // client.on('event', function(data) {
+  //   console.log('io connected with', data);
+  //   client.emit('ok', 'yolo');
+  // });
+  // client.on('disconnect', function() {
+  //   console.log('io disconnected');
+  // });
 });
